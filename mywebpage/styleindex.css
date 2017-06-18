@@ -118,7 +118,7 @@ footer
   background: #f2f1ed;
   border: 1px solid lightgray;
 }
-ul li
+.footer li
 {
   background: #f2f1ed;
   display:inline;
@@ -142,4 +142,140 @@ ul li
 {
    width: 15%;
     margin-left: 0%;
+}
+.dropdown .links
+{
+  list-style-type: none;
+  margin: 0;
+  display: none;
+}
+.dropdown ul li a{
+  font-size: 1.3rem;
+  color: black;
+  text-decoration: none;
+  margin-right: 7%;
+  list-style-type: none;
+}
+.showmenu{
+  font-size: 1.3rem;
+  color: black;
+  text-decoration: underline;
+  list-style-type: none;
+  padding-top: 5%;
+  display: none;
+}
+.links ul{
+  margin: -1%;
+}
+.links ul li
+{
+  list-style-type: none;
+}
+.footerimg
+{
+  width:3%;
+  margin-left:6%;
+  margin-top: 2.3%;
+  display: none;
+}
+.footerimgp
+{
+  width:8%;
+  margin-top: 5%;
+  display: none;
+}
+.toparrow
+{
+  width:3%;
+  margin-left: 36%;
+  display: none;
+}
+footer .phonenumber
+{
+  float: right;
+  margin-right: 30%;
+  display: none;
+}
+.showphone
+{
+  width:39%;
+  margin-left:6%;
+  float: left;
+  padding: 0;
+  /*padding-right: 10%;*/
+}
+.phonenumber p
+{
+  font-size: 0.8rem;
+}
+
+@media(max-width:800px)
+{
+  .showmenu
+  {
+    display: inline;
+    line-height: 50px;
+  }
+  .openingflor1
+  {
+    padding-top: 10%;
+  }
+  .normallink,  .lastlink, .firstlink
+  {
+    display: none;
+  }
+  header
+  {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  .firstlink
+  {
+    padding: 0;
+    margin: 0;
+  }
+  .dropdown:hover .links{
+      display: inline
+  }
+  .links ul li a:hover
+  {
+    color:gray;
+  }
+  .logotip1
+  {
+    margin-top: 12%;
+  }
+  .arrow
+  {
+    display: none;
+  }
+
+}
+@media (max-width:920px)
+{
+  .footer
+  {
+    display:none;
+  }
+  .footerimg
+  {
+    display: inline;
+  }
+  .footerimgp
+  {
+    display: inline;
+  }
+  .toparrow
+  {
+    display: inline;
+    float: right;
+    margin-top: 2.3%;
+  }
+  .showphone:hover .phonenumber
+  {
+    display: inline;
+  }
+
+
 }
