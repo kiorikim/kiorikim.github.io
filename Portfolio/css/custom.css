@@ -100,5 +100,5 @@ footer {
 }
 .active
 {
-  color:black;
+  background-color:lightgray !important;
 }

@@ -1,7 +1,6 @@
 $(document).ready(function(){
  $("a").on("click",function(){
-   $("a").addClass("active");
+   $("a").removeClass("active");
+   $(this).addClass("active");
  })
-
-
 });

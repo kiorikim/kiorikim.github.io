@@ -1,0 +1,252 @@
+.zhasotan_left_menu {
+    z-index: 1000001;
+    position: fixed;
+    -webkit-transform: rotate(-90deg) translateX(-50%);
+    transform: rotate(-90deg) translateX(-50%);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    top: 50%;
+    left: 3%;
+}
+.zhasotan_left_menu a {
+    display: inline-block;
+    padding: 2% 0;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 5%;
+    letter-spacing: .22rem;
+    cursor: pointer;
+    margin-left: 15px;
+    margin-right: 15px;
+    color: #333;
+    position: relative;
+    transition: all .3s ease;
+    font-weight: 300;
+}
+.main_img1
+{
+  width:50%;
+  float: left;
+  margin-left: 10%;
+  margin-top: 7%;
+}
+.main_img
+{
+  width:50%;
+  float: left;
+  margin-left: 10%;
+  margin-top: 7%;
+}
+.last_main_img
+{
+  width:50%;
+  float: left;
+  margin-left: 10%;
+  margin-top: 7%;
+  margin-bottom: 5%;
+}
+.goal_text_div
+{
+  float:right;
+  margin-right: 10%;
+  margin-left: 5%;
+  width: 25%;
+  margin-top: 13%;
+  font-size: 2rem;
+}
+.history_text_div
+{
+  float:right;
+  margin-right: 10%;
+  margin-left: 5%;
+  width: 25%;
+  margin-top: 12%;
+  font-size: 1.5rem;
+}
+#history,#first_meeting,#second_meeting,#third_meeting
+{
+  clear: both;
+  margin-top: 5%;
+}
+.first_meeting_text_div
+{
+  float:right;
+  margin-right: 10%;
+  margin-left: 5%;
+  width: 25%;
+  margin-top: 10%;
+  font-size: 1.5rem;
+}
+.project1
+{
+  float: left;
+  width: 45%;
+  height: 60vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../images/project1.jpg);
+  background-size: cover;
+  margin-left: 3%;
+  margin-top: 5%;
+  text-align: right;
+}
+.project2
+{
+  float:right;
+  width: 45%;
+  height:60vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../images/project2.png);
+  background-size: cover;
+  margin-right: 3%;
+  margin-top: 5%;
+  text-align: right;
+}
+.project3
+{
+  float: left;
+  width: 45%;
+  height:60vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../images/project3.jpg);
+  background-size: cover;
+  margin-left: 3%;
+  margin-top: 5%;
+  text-align: right;
+}
+.project4
+{
+  float:right;
+  width: 45%;
+  height:60vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../images/project4.jpg);
+  background-size: cover;
+  margin-right: 3%;
+  margin-top: 5%;
+  text-align: right;
+}
+.project5
+{
+  float: left;
+  width: 45%;
+  height:60vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../images/project5.jpg);
+  background-size: cover;
+  margin-left: 28%;
+  margin-top: 5%;
+  text-align: right;
+}
+.know_more
+{
+  margin-right:1%;
+  margin-top: 52%;
+}
+.sekr .sekr_img
+{
+  float:left;
+  margin-left: 20%;
+  margin-top: 5%;
+  clear: both;
+}
+.sekr .sekr_info
+{
+  margin-right:20%;
+  margin-top:20%;
+  float:right;
+  text-align: center;
+  font-size: 3rem;
+}
+
+#president
+{
+  clear: both;
+  margin-left: 7%;
+  padding-top: 5%;
+  margin-right: 2%;
+}
+.programme .list-posl .post {
+    padding: 20px 0;
+}
+.articles .list-articles .post .post_meta {
+    color: #777;
+    font-size: 12px;
+    font-style: italic;
+}
+.programme .list-posl .post .post_title {
+    font-weight: normal;
+    font-size: 14px;
+}
+.articles .list-articles .post .post_title {
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0 0 10px;
+}
+.articles .list-articles .post .post_title a {
+    color: #333;
+}
+.articles .list-articles .post {
+    padding: 25px 0 30px;
+    border-bottom: 1px solid #e8e8e8;
+}
+#documents
+{
+  clear: both;
+  margin-left: 7%;
+  padding-top: 5%;
+  margin-right: 2%;
+}
+.news_preview
+{
+  margin-top: 7%;
+  margin-left: 6%;
+}
+.news_preview td
+{
+  border-bottom: 1px solid lightgray;
+}
+.news_preview_img
+{
+  width:60%;
+  padding-bottom: 4%;
+  padding-top: 4%;
+}
+.img_td
+{
+  width: 20%;
+  text-align: center;
+}
+.description
+{
+  width:50%;
+  text-align: center;
+}
+.date
+{
+  width: 30%;
+  text-align: center;
+}
+.news_arrow
+{
+  padding-right: 3%;
+}
+.sekr_car
+{
+  width: 85%;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+.carousel-control {
+  background:none !important;
+}
+.black
+{
+  color: black;
+}
+.project_modal
+{
+  padding: 5%;
+  text-align:center !important;
+}
+.project_modal li{
+  text-align: left;
+}
+.active_left
+{
+  text-decoration: underline;
+}
