@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Bootstrap 101 Template</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/custom.css">
+  </head>
+  <body>
+    <div class="global-wrapper" ng-app="myApp">
+
+<!-- nav section -->
+<nav class="navbar navbar-default navbar-fixed-top my_nav">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="../index.html">Zhasotan</a></li>
+        <li><a href="../about_us.html">О нас</a></li>
+        <li><a href="../news.html">Новости<span class="sr-only">(current)</span></a></li>
+        <li><a href="../projects.html">Проекты</a></li>
+        <li><a href="../gallery/gallery.html">Галерея</a></li>
+        <li class="active"><a href="">Контакты</a></li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="container" style="margin-top: 70px">
+  <div class="row panel panel-primary my_contacts" ng-controller="homeCtrl">
+
+
+
+    <!--     contact list   	 -->
+    <div class="col-xs-5 panel-body contact_list">
+      <ul class="list-group">
+        <li class="list-group-item"> <h4>Контакты:</h4>
+          <contact class="list-group-item" ng-repeat="contact in contacts | orderBy: 'city' | filter: searchText "></contact>
+        </li>
+      </ul>
+    </div>
+
+    <!--   ng-view below       -->
+    <div class="col-xs-7 person_show">
+      <div class="list-group panel-body">
+        <div ng-view></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <!--  html templates used by angular, usually in separate files -->
+  <script type="text/ng-template" id="default.html">
+    <div class="alert alert-success text-center" ng-class="{hidden : !removed}"> {{removed}}</div>
+    <div class="list-group-item text-center">Выберите город из представленных в списке</div>
+  </script>
+
+  <!-- 	template for displaying a contacts info	 -->
+  <script type="text/ng-template" id="contact_info.html">
+    <div class="list-group-item">
+      <div class="card">
+            <div class="photo">
+              <img ng-src="{{currentContact.ava}}" >
+              </div>
+            <div class="banner">
+          </div>
+
+            <ul class="darude">
+                <li><b>{{currentContact.name}}</b></li>
+            </ul>
+
+            <div class="col-sm-6 filial_info" style="border-right: 3px solid black; text-align: right" >
+                <b>{{currentContact.city}} <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></b>
+                <p>{{currentContact.street}}</p>
+                <span style="text-align:center;" class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+              <ul class="wanttodie">
+                <li>{{currentContact.fillial}}</li>
+                <li>{{currentContact.otdel}}</li>
+                <li>{{currentContact.chlen}}</li>
+              </ul>
+            </div>
+
+            <div class="col-sm-6" style="text-align: left">
+              <p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> {{currentContact.phone}}</p>
+              <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{currentContact.mail}} </p>
+              <p>{{currentContact.jomail}}</p>
+              <p><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span> {{currentContact.twitter}} </p>
+            </div>
+      </div>
+
+    </div>
+  </script>
+
+<!--      template used for the ng-repeat in the contact list        -->
+  <script type="text/ng-template" id="contact.html">
+    <a ng-href="#/contact-info/{{contacts.indexOf(contact)}}">
+      {{contact.name}}
+      <p style="diplay: block; float: right; color: #8b9091">{{contact.city}}</p>
+    </a>
+  </script>
+</div>
+
+<script>
+var myApp = angular.module('myApp', ['ngRoute'])
+
+//ng-route config
+.config(function ($routeProvider, $locationProvider){
+  $routeProvider
+    .when('/home', {
+      templateUrl: 'default.html',
+    })
+    .when('/contact-info/:contact_index', {
+      templateUrl: 'contact_info.html',
+      controller: 'contactInfoCtrl'
+    })
+    .when('/add', {
+      templateUrl: 'contact_form.html',
+      controller: 'addContactCtrl'
+    })
+    .when('/edit/:contact_index', {
+      templateUrl: 'contact_form.html',
+      controller: 'editContactCtrl'
+    })
+    .otherwise({redirectTo: '/home'});
+})
+
+// controllers
+.controller('navCtrl', function ($scope) {
+  $scope.nav = {
+    navItems: ['home', 'add'],
+    selectedIndex: 0,
+    navClick: function ($index) {
+      $scope.nav.selectedIndex = $index;
+    }
+  };
+})
+
+.controller('homeCtrl', function ($scope, ContactService){
+  $scope.contacts = ContactService.getContacts();
+
+  $scope.removeContact = function (item) {
+    var index = $scope.contacts.indexOf(item);
+    $scope.contacts.splice(index, 1);
+    $scope.removed = 'Contact successfully removed.';
+  };
+
+})
+
+.controller('contactInfoCtrl', function ($scope, $routeParams){
+  var index = $routeParams.contact_index;
+  $scope.currentContact = $scope.contacts[index];
+})
+
+
+// directives
+.directive('contact', function () {
+  return {
+    restrict: 'E',
+    replace: true,
+    templateUrl: 'contact.html'
+  }
+})
+
+// services
+.factory('ContactService', [function () {
+  var factory = {};
+
+  factory.getContacts = function () {
+    return contactList;
+  }
+
+  // contact list, usually would be a separate database
+  var contactList = [
+    {id: 1, city: 'Астана', street: 'ул. Тәуелсіздік 3', fillial: '3 - районных филиалов', otdel: '87 - первичных отделений МК «Жас Отан»', chlen: '14 200 - общее количество членов', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_20.jpg', name: 'Болысбек Мухаммеджан', phone: '8 (702)-757-47-17 ', mail: 'astana@zhasotan.kz', jomail: 'm.bolysbek@nurotan.kz', twitter: '@Zhasotan_Astana'},
+    {id: 2, city: 'Кокшетау', street: 'ул. Ауельбекова, 117.', fillial: '19 - 17 районных, 2 городских филиалов', otdel: '22 - первичных отделений МК «Жас Отан»', chlen: '6 094 - общее количество членов', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_24.jpg', name: 'Жунусова Жанара', phone: '8-777-246-74-95', mail: 'zhunusova09@mail.ru', jomail: 'akmola@zhasotan.kz', twitter: 'http://twitter.com/ZhanaraZhunusova'},
+    {id: 3, city: 'Уральск', street: 'Уральск ул.Ж. Молдагалиева 19', fillial: '13 – 12 районных, 1 городской филиал', otdel: '262 - первичных отделений МК «Жас Отан»', chlen: ' 14 733 - общее количество членов', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_12.jpg', name: 'Жолдаскалиев Нургали', phone: '8 775 219 05 83', mail: 'bko@zhasotan.kz', jomail: '', twitter: '@zholdaskaliev'},
+    {id: 4, city: 'Атырау', street: 'ул. Айтеке би 79', fillial: '8 – 7 районных, 1 городской филиал', otdel: '21 - первичных отделений МК «Жас Отан»', chlen: '5 044 - общее количество членов', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_10.jpg', name: 'undefined', phone: '', mail: '', jomail: '', twitter: ''},
+    {id: 5, city: 'Актау', street: '14 мкр, 1- б', fillial: '7 - 5 районных, 2 городских филиалов', otdel: ' 72 - первичных отделений МК «Жас Отан»', chlen: ' 3 528- общее количество членов', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_16.JPG', name: 'Нуров Асет', phone: ' 8 701 621 80 15', mail: 'aset_nur90@mail.ru', jomail: 'mangystau@zhasotan.kz ', twitter: 'http://twitter.com/Zhasotan_Aktau'},
+    {id: 6, city: 'Актобе', street: 'ул. Тургенева, 86', fillial: '13 – 12 районных, 1 городской филиал', otdel: ' 126 - первичных отделений МК «Жас Отан»', chlen: ' 3 259 - общее количество членов', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_8.jpg', name: 'Асылжан Буркиталин', phone: ' 8 707 397 03 42', mail: '', jomail: 'a.burkitalin@zhasotan.kz', twitter: 'http://twitter.com/Zhasotan_Aktobe'},
+    {id: 7, city: 'Костанай', street: 'ул. Гоголя 111', fillial: '20 – 16 районных, 4 городских филиалов', otdel: ' 87 - первичных отделений МК «Жас Отан»', chlen: ' 7 434 - общее количество членов', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_14.jpg', name: 'Тулетаев Ерлан ', phone: ' 8 702 797 77 28', mail: 'kostanay@zhasotan.kz', jomail: 'kostanay@zhasotan.kz', twitter: 'http://twitter.com/Zhasotan_Kost'},
+    {id: 8, city: 'Петропавловск', street: 'ул. Абая 15', fillial: '15 - 13 районных, 4 городской филиал', otdel: ' 242 - первичных отделений МК «Жас Отан»', chlen: ' 10 389 - общее количество членов', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_18.JPG', name: 'Танакулов Муса', phone: '8 702 727-44-90', mail: 'musa_1992@mail.ru', jomail: 'sko@zhasotan.kz', twitter: 'http://twitter.com/Zhasotan_SKO'},
+    {id: 9, city: 'Павлодар', street: 'ул. Кривенко, 25А', fillial: '13 - 10 районных, 3 городских филиалов', otdel: ' 73 -  первичных отделений МК «Жас Отан»', chlen: ' 10 227 - общее количество членов', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_17.jpg', name: 'Айтышев Данияр ', phone: ' 8-702-462-38-22', mail: 'dan19108@mail.ru', jomail: 'pavlodar@zhasotan.kz', twitter: 'http://twitter.com/Zhasotan_Pavl'},
+    {id: 10, city: 'Караганда', street: 'ул. Алиханова 4а', fillial: '20 – 11 районных, 9 городских  филиалов', otdel: ' 112 - первичных отделений МК «Жас Отан»', chlen: '', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_13.jpg', name: 'Жетписбаев Нуржан', phone: ' 8 778 944 41 21', mail: '', jomail: 'karagandy@zhasotan.kz', twitter: 'http://twitter.com/Zhasotan_Krg'},
+    {id: 11, city: 'Усть-Каменогорск', street: 'ул.Казахстан, 158а', fillial: '19 - 15 районных, 5 городских филиалов', otdel: ' 86 - первичных отделений МК «Жас Отан»', chlen: ' 16 750 - общее количество членов', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_11.jpg', name: 'Бахыт Маржан ', phone: ' 8 778-930-66-87', mail: 'marjan_makos@mail.ru', jomail: 'shko@zhasotan.kz', twitter: 'http://twitter.com/Zhasotan_VKO'},
+    {id: 12, city: 'Талдыкорган', street: 'ул.И.Жансугурова 13А', fillial: '19 – 16 районных, 3 городских филиалов', otdel: ' 317 - первичных отделений МК «Жас Отан»', chlen: ' 19 100 – мүше', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_9.jpg', name: 'Жаксыкельдинов Бахтияр ', phone: '8 (778) 190 07 09', mail: 'zhaksygeldinov85@mail.ru', jomail: 'http://almaty_obl@zhasotan.kz/', twitter: 'http://twitter.com/Zhasotan_AlmObl'},
+    {id: 13, city: 'Алматы', street: 'Проспект Абылай хана 79', fillial: '7 - районных филиалов', otdel: ' 172 - первичных отделений МК «Жас Отан»', chlen: ' 6 054- общее количество членов', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_21.jpg', name: 'Сыдыкова Айдана ', phone: '8 (775) 776 55 12', mail: 'daurenkyzy.a@gmail.com', jomail: 'almaty@zhasotan.kz', twitter: ''},
+    {id: 14, city: 'Кызылорда', street: 'ул Ы.Жакаева без/н', fillial: '8 - 7 районных, 1 городской   филиал', otdel: ' 178 - первичных отделений МК «Жас Отан»', chlen: ' 10 146 - общее количество членов', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_15.jpg', name: 'Сабанбаев Абылайхан ', phone: ' 8-777-643-81-86', mail: '', jomail: 'kyzylorda@zhasotan.kz', twitter: 'http://twitter.com/Zhasotan_Kizil'},
+    {id: 15, city: 'Тараз', street: 'площадь Достык 1', fillial: '11 – 10 районных, 1 городской филиал ', otdel: '145 - первичных отделений МК «Жас Отан»', chlen: '12 354 - общее количество членов', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_26.JPG', name: 'Болатбек Уалихан', phone: ' 87072728591', mail: 'Yalihan@mail.ru', jomail: 'zhambyl@zhasotan.kz', twitter: 'http://twitter.com/zhasotan_taraz'},
+    {id: 16, city: 'Шымкент', street: 'ул Бейбітшілік 3 ', fillial: '15 - 11 районных, 4 городской филиал', otdel: ' 72 - первичных отделений МК «Жас Отан»', chlet: ' 7 800 - общее количество членов', ava: 'http://www.zhasotan.kz/uploads/contacts/medium/contacts_19.jpg', name: 'Молдабеков Бауыржан ', phone: '8701 114 44 66', mail: ' Kz_baurzhan@mail.ru', jomail: 'oko@zhasotan.kz', twitter: 'http://twitter.com/Zhasotan_OKO'}
+
+
+  ];
+
+  return factory;
+}]);
+
+</script>
+        <div class="container">
+          <div class="row panel panel-primary">
+            <div class="panel-body">
+            <div class="inner contact">
+                <!-- Form Area -->
+                <div class="contact-form">
+                    <!-- Form -->
+                    <form id="contact-us" method="post" action="#">
+                        <!-- Left Inputs -->
+                        <div class="col-xs-6 wow animated slideInLeft name_form" data-wow-delay=".5s">
+                            <!-- Name -->
+                            <input type="text" name="name" id="name" required="required" class="form text_form" placeholder="Имя" />
+                            <!-- Email -->
+                            <input type="email" name="mail" id="mail" required="required" class="form text_form" placeholder="Email" />
+                            <!-- Subject -->
+                            <div class="select my_select">
+                              <select name="slct" id="slct" class = "my_select">
+                                <option>Выберите регион</option>
+                                <option value="1">Астана</option>
+                                <option value="2">Алматы</option>
+                                <option value="3">Шымкент</option>
+                              </select>
+                            </div>
+                        </div><!-- End Left Inputs -->
+                        <!-- Right Inputs -->
+                        <div class="col-xs-6 wow animated slideInRight textarea_form" data-wow-delay=".5s">
+                            <!-- Message -->
+                            <textarea name="message" id="message" class="form textarea text_form"  placeholder="Текст сообщения"></textarea>
+                        </div><!-- End Right Inputs -->
+                        <!-- Bottom Submit -->
+                        <div class="relative fullwidth col-xs-12">
+                            <!-- Send Button -->
+                            <button type="submit " id="submit" name="submit" class="form-btn semibold my_button_submit">Отправить</button>
+                        </div><!-- End Bottom Submit -->
+                        <!-- Clear -->
+                        <div class="clear"></div>
+                    </form>
+
+                    <!-- Your Mail Message -->
+                    <div class="mail-message-area">
+                        <!-- Message -->
+                        <div class="alert gray-bg mail-message not-visible-message">
+                            <strong>Thank You !</strong> Наверное, мы его прочитаем
+                        </div>
+                    </div>
+
+                </div><!-- End Contact Form Area -->
+            </div><!-- End Inner -->
+          </div>
+          </div>
+        </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
