@@ -1,0 +1,16 @@
+.contacts
+{
+  background-color: white;
+  border: 1px solid #676862;
+}
+.not_link_contacts
+{
+  padding-top: 3.2%;
+}
+.contacts a{
+  color: black !important;
+}
+.instagram_link:hover, .backtotop_link:hover
+{
+  text-decoration: underline !important;
+}
