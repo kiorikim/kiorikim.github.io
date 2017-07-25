@@ -1,0 +1,19 @@
+<h1>Edit task</h1>
+<%= form_for @task do |task|%>
+  <p>
+    <%=task.label:title%>
+    <%=task.text_field :title%>
+  </p>
+  <p>
+    <%=task.label:description%>
+    <%=task.text_area :description%>
+  </p>
+  <p>
+    <%=task.label:payment%>
+    <%=task.text_field :payment%>
+  </p>
+  <p class="submit_button">
+    <%=task.submit%>
+  </p>
+  <%= render'shared/errors', obj: @task%>
+<%end%>

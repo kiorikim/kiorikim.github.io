@@ -1,0 +1,152 @@
+body{
+  text-align: center;
+  background-color: rgb(238,238,238);
+  font-family: 'Anonymous Pro', monospace;
+}
+#nav
+{
+  height: 70px;
+  padding-right: 2%;
+  padding-left: 2%;
+  background: rgba(0,0,0,0.8);
+  border: 0;
+}
+.navbar-brand
+{
+  font-size: 3rem;
+  margin-top:10px;
+  color: #fff !important;
+}
+.main_page_link, .log_in_link
+{
+  margin-top: 10px;
+  color: #fff !important;
+}
+.sign_up_link
+{
+  margin-top:5%;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  border: 1px solid rgba(0,0,0,.12);
+  stroke: transparent;
+  color: #fff!important;
+  background: #ed1c40;
+  border-color: #ed1c40;
+  /*margin-right: 5%;*/
+}
+.sign_up_link:hover
+{
+  background: #ed1c40 !important;
+  border-color: #ed1c40 !important;
+  text-decoration: underline !important;
+}
+.sign_up_link:visited
+{
+  background: #ed1c40 !important;
+  border-color: #ed1c40 !important;
+}
+
+.main_page_link
+{
+  color: #fff !important;
+}
+.mynav
+{
+  height: 20px;
+}
+.mynav1
+{
+  height: 150px;
+}
+.picture
+{
+  height: 40vh;
+  background-image: url(../images/1.jpeg);
+  padding-top: 5%;
+  margin-top: 70px;
+}
+.picture h1
+{
+  margin-top: 3%;
+}
+.registration_keywords
+{
+  padding: 0;
+}
+.registration_keywords li
+{
+  padding: 5px 10px 5px 10px;
+  border : 1px solid black;
+  width: 20%;
+  margin-top:5%;
+  list-style-type: none;
+  display: inline;
+}
+.reg_key{
+  margin-left: 2%;
+}
+.person a
+{
+  padding: 8px 16px;
+  border: 1px solid rgba(0,0,0,.12);
+  stroke: transparent;
+  color: #fff!important;
+  background: #ed1c40;
+  border-color: #ed1c40;
+  margin-bottom: 7%;
+}
+.person li
+{
+  font-size: 2rem;
+  list-style-type: none;
+}
+.person h5
+{
+  color:rgba(0,0,0,.26);
+  text-align: center;
+  padding-right: 47%;
+}
+.person h3
+{
+  font-size: 1.8rem;
+}
+input
+{
+  margin-top: 3%;
+  width: 70%;
+  margin-bottom: 3%;
+}
+#person_two,#person_three,#person_four,#person_five,#person_six,#person_seven,#person_eight,#person_nine
+{
+  display: none;
+  margin-top: 20%;
+  margin-bottom: 25%;
+  clear: both;
+}
+.active
+{
+  background: black;
+  color:white;
+}
+.person h3
+{
+  text-align: center;
+  padding-right: 47%;
+}
+
+.reg_image
+{
+  float: left;
+  margin-left: 40%;
+  width: 4%;
+}
+.reg_image1
+{
+  float: left;
+  width: 4%;
+  margin-left: 38%;
+}
+.next_button
+{
+  margin-right: 4%;
+}

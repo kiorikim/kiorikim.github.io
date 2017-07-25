@@ -1,0 +1,40 @@
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Company Logout', destroy_user_session_path, method: :delete) %>
+    <p><%= current_user.email %></p>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Company Login', new_user_session_path)  %>
+  </li>
+<% end %>
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Company Edit registration', edit_user_registration_path) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Company Register', new_user_registration_path)  %>
+  </li>
+<% end %>
+//////////////////////////////////////////////////////////////////////////////
+<% if sample_user_signed_in? %>
+  <li>
+  <%= link_to('User Logout', destroy_sample_user_session_path, method: :delete) %>
+    <p><%= current_sample_user.email %></p>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('User Login', new_sample_user_session_path)  %>
+  </li>
+<% end %>
+<% if sample_user_signed_in? %>
+  <li>
+  <%= link_to('User Edit registration', edit_sample_user_registration_path) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('User Register', new_sample_user_registration_path)  %>
+  </li>
+<% end %>
+//////////////////////////////////////////////////////////////////////////////

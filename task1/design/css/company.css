@@ -1,0 +1,133 @@
+body{
+  text-align: center;
+  background-color: rgb(238,238,238);
+  font-family: 'Anonymous Pro', monospace;
+}
+#nav
+{
+  height: 70px;
+  padding-right: 2%;
+  padding-left: 2%;
+  background: rgba(0,0,0,0.8);
+  border: 0;
+}
+.navbar-brand
+{
+  font-size: 3rem;
+  margin-top:7%;
+  color: #fff !important;
+}
+.log_in_link
+{
+  margin-top:10%;
+  color: #fff !important;
+}
+.sign_up_link
+{
+  margin-top:9%;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  border: 1px solid rgba(0,0,0,.12);
+  stroke: transparent;
+  color: #fff!important;
+  background: #ed1c40;
+  border-color: #ed1c40;
+  /*margin-right: 5%;*/
+}
+.sign_up_link:hover
+{
+  background: #ed1c40 !important;
+  border-color: #ed1c40 !important;
+  text-decoration: underline !important;
+}
+.sign_up_link:visited
+{
+  background: #ed1c40 !important;
+  border-color: #ed1c40 !important;
+}
+.main_page_link
+{
+  margin-top:10%;
+  color: #fff !important;
+}
+.mynav
+{
+  height: 20px;
+}
+.mynav1
+{
+  height: 150px;
+}
+.picture
+{
+  height: 40vh;
+  background-image: url(../images/1.jpeg);
+  padding-top: 5%;
+  margin-top: 70px;
+}
+.picture h1
+{
+  margin-top: 3%;
+}
+.company h3
+{
+  font-size: 1.8rem;
+}
+.company h5
+{
+  color:rgba(0,0,0,.26);
+  text-align: center;
+  padding-right: 3%;
+}
+.company li{
+  font-size: 2rem;
+  list-style-type: none;
+}
+#company_first input, #company_second input,#company_third input,#company_fifth input,#company_sixth input {
+  margin-top: 3%;
+  width: 70%;
+  margin-bottom: 3%;
+}
+.fourth
+{
+  width: 70%;
+  margin: 3.3px;
+}
+.company a
+{
+  padding: 8px 16px;
+  border: 1px solid rgba(0,0,0,.12);
+  stroke: transparent;
+  color: #fff!important;
+  background: #ed1c40;
+  border-color: #ed1c40;
+  margin-bottom: 7%;
+}
+#company_second,#company_third,#company_fourth,#company_fifth,#company_sixth
+{
+  /*opacity: 0.5;*/
+  display: none;
+  margin-top: 20%;
+  margin-bottom: 25%;
+  clear: both;
+}
+.reg_image
+{
+  float: left;
+  margin-left: 40%;
+  width: 4%;
+}
+.company h3
+{
+  text-align: center;
+  padding-right: 47%;
+}
+.next_button
+{
+  margin-right: 4%;
+}
+.password
+{
+  text-align: center;
+  padding-right: 47%;
+}

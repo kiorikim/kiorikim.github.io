@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Swiper-3.4.2/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600,700" rel="stylesheet">
+    </head>
+    <body>
+        <script src="Swiper-3.4.2/dist/js/swiper.min.js"></script>
+    <!-- Page Wrap -->
+    <nav class="navbar navbar-default navbar-fixed-bottom contacts">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#">Back to top <span class="sr-only">(current)</span></a></li> -->
+            <li class="not_link_contacts"><a href="#">Phone: 8(701)910-74-73</a></li>
+            <li><a href="https://www.instagram.com/kiorikz/" class="instagram_link">Instagram: @kiorikz</a></li>
+            <li class="not_link_contacts"><a href="#">Mail: kiori.moda@gmail.com</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../index.html" class="backtotop_link">Back to main page</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="page-wrap" id="photo">
+
+
+
+
+      <div id="home-slider">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-slide-one">
+              <div class="swiper-image" data-swiper-parallax-y="-20%">
+                <div class="swiper-image-inner swiper-image-left swiper-image-one">
+                  <img src="" alt="" width="80%" height="100vh" class="display-img1" style="filter: sepia(0%);">
+                </div>
+              </div>
+              <div class="swiper-image" data-swiper-parallax-y="35%">
+                <div class="swiper-image-inner swiper-image-right swiper-image-two">
+                  <div id="wrapper">
+        <div class="row image-icon">
+          <p class = "price">Price:</p>
+          <br>
+          <p class = "sizes">Sizes:</p>
+
+        </div>
+
+
+
+<!-- #wrapper // --></div>
+
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-one">
+              <div class="swiper-image" data-swiper-parallax-y="-20%">
+                <div class="swiper-image-inner swiper-image-left swiper-image-one">
+                  <img src="" alt="" width="80%" height="100vh" class="display-img1" style="filter: sepia(0%);">
+                </div>
+              </div>
+              <div class="swiper-image" data-swiper-parallax-y="35%">
+                <div class="swiper-image-inner swiper-image-right swiper-image-two">
+                  <div id="wrapper">
+        <div class="row image-icon">
+          <p class = "price">Price:</p>
+          <br>
+          <p class = "sizes">Sizes:</p>
+
+        </div>
+
+
+
+<!-- #wrapper // --></div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide swiper-slide-one">
+              <div class="swiper-image" data-swiper-parallax-y="-20%">
+                <div class="swiper-image-inner swiper-image-left swiper-image-one">
+                  <img src="" alt="" width="80%" height="100vh" class="display-img1" style="filter: sepia(0%);">
+                </div>
+              </div>
+              <div class="swiper-image" data-swiper-parallax-y="35%">
+                <div class="swiper-image-inner swiper-image-right swiper-image-two">
+                  <div id="wrapper">
+        <div class="row image-icon">
+          <p class = "price">Price:</p>
+          <br>
+          <p class = "sizes">Sizes:</p>
+
+        </div>
+
+
+
+<!-- #wrapper // --></div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+    <script>
+    var mySwiper = new Swiper(".swiper-container", {
+      direction: "vertical",
+      loop: true,
+      pagination: ".swiper-pagination",
+      grabCursor: true,
+      speed: 1000,
+      paginationClickable: true,
+      parallax: true,
+      autoplay: false,
+      effect: "slide",
+      mousewheelControl: 1
+    });
+
+    </script>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <script>
+  		var thumbs = $(".image-icon").find("img");
+  		thumbs.click(function() {
+  			var src = $(this).attr("src");
+  			var dp = $(".display-img1");
+  			dp.attr("src", src);
+  		});
+
+  	</script>
+    <script>
+  		var thumbs = $(".image-icon2").find("img");
+  		thumbs.click(function() {
+  			var src = $(this).attr("src");
+  			var dp = $(".display-img2");
+  			dp.attr("src", src);
+  		});
+
+  	</script>
+    <script>
+      var thumbs = $(".image-icon3").find("img");
+      thumbs.click(function() {
+        var src = $(this).attr("src");
+        var dp = $(".display-img3");
+        dp.attr("src", src);
+      });
+
+    </script>
+    <script>
+      var thumbs = $(".panel-footer").find("a");
+      thumbs.click(function() {
+        var src = $(this).attr("src");
+        var dp = $("iframe");
+        dp.attr("src", src);
+      });
+
+    </script>
+
+    <script>
+    $('a[href^="#"]').on('click', function(event) {
+
+    var target = $(this.getAttribute('href'));
+
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 1000);
+    }
+
+});
+  </script>
+  <script src="../js/custom.js"></script>
+
+  </body>
+</html>

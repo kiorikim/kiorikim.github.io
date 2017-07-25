@@ -1,0 +1,20 @@
+<%if logged_in?%>
+  <<%=link_to "Log out", logout_path, method: :delete%>
+  <p><%=current_company.name%></p>
+<%else%>
+  <%=link_to "Sign up", signup_path%>
+  <%=link_to "Log in", login_path%>
+<%end%>
+
+<h1>All tasks</h1>
+<%@tasks.each do |t|%>
+  <h3><%=t.title%></h3>
+  <h3><%=t.description%></h3>
+  <h3><%=t.payment%></h3>
+  <p><%=link_to "Open",task_path(t)%></p>
+  <%if logged_in? and current_company == t.company %>
+  <p><%=link_to "Edit",edit_task_path(t)%></p>
+  <p><%=link_to "Delete",task_path(t),method: :delete, data: {confirm:"Are you sure?"}%></p>
+  <%end%>
+  <p>Created by: <%=t.company.name%></p>
+<%end%>

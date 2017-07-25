@@ -1,0 +1,64 @@
+body{
+  text-align: center;
+  background-color: rgb(238,238,238);
+  font-family: 'Anonymous Pro', monospace;
+}
+#nav
+{
+  height: 70px;
+  padding-right: 2%;
+  padding-left: 2%;
+  background: rgba(0,0,0,0.8);
+  border: 0;
+}
+.navbar-brand
+{
+  font-size: 3rem;
+  margin-top:10px;
+  color: #fff !important;
+}
+.main_page_link, .log_in_link
+{
+  margin-top: 10px;
+  color: #fff !important;
+}
+.sign_up_link
+{
+  margin-top:5%;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  border: 1px solid rgba(0,0,0,.12);
+  stroke: transparent;
+  color: #fff!important;
+  background: #ed1c40;
+  border-color: #ed1c40;
+  /*margin-right: 5%;*/
+}
+.sign_up_link:hover
+{
+  background: #ed1c40 !important;
+  border-color: #ed1c40 !important;
+  text-decoration: underline !important;
+}
+.sign_up_link:visited
+{
+  background: #ed1c40 !important;
+  border-color: #ed1c40 !important;
+}
+
+.main_page_link
+{
+  color: #fff !important;
+}
+.content h2
+{
+  margin-top: 5%;
+}
+.info-box5 .info .hd
+{
+    font-weight: bold !important;
+}
+.img
+{
+  color: black !important;
+}

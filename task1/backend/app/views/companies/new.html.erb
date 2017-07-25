@@ -1,0 +1,15 @@
+<h1>Add company</h1>
+<%= form_for @company do |c|%>
+  <p>
+    <%=c.label:name%>
+    <%=c.text_field :name%>
+  </p>
+  <p class="form_description">
+    <p><%= c.label:password%></p>
+    <p><%= c.password_field :password, placeholder: "Password"%></p>
+  </p>
+  <p class="submit_button">
+    <%=c.submit%>
+  </p>
+  <%= render'shared/errors', obj: @company%>
+<%end%>

@@ -1,3 +1,6 @@
+body{
+      font-family: 'Jura', sans-serif;
+}
 .start_background_div
 {
   background: url("../images/1.jpg") no-repeat center center fixed;
@@ -8,7 +11,10 @@
   height: 105vh;
   margin-top: -21px;
 }
-
+#col1,#col2
+{
+  margin-top: 3%;
+}
 .logo_img
 {
   width:35%;
@@ -57,9 +63,9 @@
   background-color: white;
   border: 1px solid #676862;
 }
-.not_link_contacts
+.contacts_top
 {
-  padding-top: 3.2%;
+  display: none;
 }
 .contacts a{
   color: black !important;
@@ -148,7 +154,7 @@
 }
 .col6_div
 {
-  background: url("../images/col6.jpg");
+  background: url("../images/col6.jpg") ;
   background-size: cover;
   margin-top: 5%;
   height: 90vh;
@@ -158,7 +164,8 @@
 }
 .col6_div_hover
 {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.7)),url("../images/col6.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7),rgba(255, 255, 255,
+     0.7)),url("../images/col6.jpg");
 }
 .text_see_full_col
 {
@@ -166,4 +173,36 @@
   display: none;
   padding-top: 10%;
   color:black;
+}
+.price
+{
+  font-size: 3rem;
+  margin-left: 5%;
+  color: white;
+  font-weight: bold;
+}
+.sizes
+{
+  font-size: 3rem;
+  margin-left: 5%;
+  color: white;
+  font-weight: bold;
+}
+
+@media (max-width:640px) {
+  .contacts{
+    display: none;
+  }
+  .contacts_top
+  {
+    display: inline;
+  }
+  #col2,#col4,#col6
+  {
+    margin-left: 5%;
+    margin-right: 8%;
+  }
+  no-repeat center center
+  .col1_div,.col-2_div,.col3_
+
 }

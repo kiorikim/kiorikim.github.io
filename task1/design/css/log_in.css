@@ -1,0 +1,93 @@
+body{
+  text-align: center;
+  background-color: rgb(238,238,238);
+  font-family: 'Anonymous Pro', monospace;
+}
+#nav
+{
+  height: 70px;
+  padding-right: 2%;
+  padding-left: 2%;
+  background: rgba(0,0,0,0.8);
+  border: 0;
+}
+.navbar-brand
+{
+  font-size: 3rem;
+  margin-top:10px;
+  color: #fff !important;
+}
+.main_page_link, .log_in_link
+{
+  margin-top: 10px;
+  color: #fff !important;
+}
+.sign_up_link
+{
+  margin-top:5%;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  border: 1px solid rgba(0,0,0,.12);
+  stroke: transparent;
+  color: #fff!important;
+  background: #ed1c40;
+  border-color: #ed1c40;
+  /*margin-right: 5%;*/
+}
+.sign_up_link:hover
+{
+  background: #ed1c40 !important;
+  border-color: #ed1c40 !important;
+  text-decoration: underline !important;
+}
+.sign_up_link:visited
+{
+  background: #ed1c40 !important;
+  border-color: #ed1c40 !important;
+}
+
+.main_page_link
+{
+  color: #fff !important;
+}
+.log_in
+{
+  border: 1px solid lightgray;
+  margin-top: 10%;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-bottom: 3%;
+  background-color: white;
+}
+.log_in_header
+{
+  border-bottom: 1px solid lightgray;
+}
+.log_in_header h1
+{
+  color:#ed1c40;
+}
+.email
+{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border-bottom: 1px solid lightgray;
+}
+.password
+{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.password input{
+  margin-top: 3%;
+}
+.log_in_button1
+{
+  padding:8px 16px !important;
+  border: 1px solid rgba(0,0,0,.12);
+  stroke: transparent;
+  color: #fff!important;
+  background: #ed1c40;
+  border-color: #ed1c40;
+  border-radius: 5%;
+}
